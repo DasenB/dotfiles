@@ -6,7 +6,7 @@ in
 {
   services = {
     #Login prompt
-    mingetty.helpLine = "If you're not Iheb, Please leave this computer alone";
+    getty.helpLine = "If you're not Bjarne, Please leave this computer alone";
 
     xserver = {
       windowManager.i3 = {
