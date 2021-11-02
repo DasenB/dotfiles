@@ -132,7 +132,7 @@ in
     ueberzug
     ####documents
     zathura
-    zathura-poppler-only
+    # zathura-poppler-only
     libreoffice
     pandoc
     texlive.combined.scheme-full
