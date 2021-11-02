@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ./private/secrets.nix
+   # ./private/secrets.nix
   ];
 
   nixpkgs.config = import ../pkgs/nixpkgs-config.nix;
