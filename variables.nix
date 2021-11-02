@@ -1,4 +1,4 @@
 {
   mainUser = "bjarne";
-  nixosConfigDir = "/etc/nixos";
+  nixosConfigDir = "/etc/nixos/configuration";
 }

@@ -9,7 +9,7 @@ in
   imports = [ home-manager.nixos ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  #Iheb
+  #Bjarne
   users.users.${mainUser} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "input" "video" ];

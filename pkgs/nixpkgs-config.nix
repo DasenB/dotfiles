@@ -13,8 +13,8 @@ in
     unstable = UnstableRepo;
     nur = NurRepo;
 
-    #vimCustom = pkgs.callPackage (builtins.toPath "${nixosConfigDir}/pkgs/overrides/vim.nix") { };
-    # zathura-poppler-only = pkgs.callPackage (builtins.toPath "${nixosConfigDir}/pkgs/overrides/zathurapoppler.nix") { };
+    vimCustom = pkgs.callPackage (builtins.toPath "${nixosConfigDir}/pkgs/overrides/vim.nix") { };
+    zathura-poppler-only = pkgs.callPackage (builtins.toPath "${nixosConfigDir}/pkgs/overrides/zathurapoppler.nix") { };
 
 
     mutt-wizard = pkgs.callPackage (builtins.toPath "${nixosConfigDir}/pkgs/mutt-wizard") { };
