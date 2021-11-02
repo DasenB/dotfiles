@@ -94,7 +94,7 @@ in
 
   home.packages = with pkgs; [
     ####vim
-    vimCustom
+    #vimCustom
     ####sysutil
     htop
     libnotify
