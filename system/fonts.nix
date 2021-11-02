@@ -23,7 +23,6 @@
     ];
     enableDefaultFonts = true;
     fontconfig = {
-      penultimate.enable = false;
       defaultFonts = {
         serif = [ "Linux Libertine" ];
         sansSerif = [ "DejaVu Sans" ];
