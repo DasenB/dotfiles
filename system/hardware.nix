@@ -8,11 +8,9 @@
 
   ## Network
   networking.hostName = "laptop";
-  networking.networkmanager.enable = true;     # Use networkmanager for internet connections
-  networking.networkmanager.unmanaged = [
-   "*" "except:type:wwan" "except:type:gsm"
-  ];
-  networking.wireless.enable = true;           # use wpa_supplicant for wireless
+  networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "wpa_supplicant";
+
 
 
   ## Sound
@@ -54,10 +52,6 @@
       Option "DRI" "2"
       Option "TearFree" "true"
       '';
-    libinput = {
-      enable = true;
-      middleEmulation = true;
-    };
   };
 
   ## CPU
