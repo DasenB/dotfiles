@@ -20,9 +20,7 @@
   
   nixpkgs.config.allowUnfree = true;
   
-  console = {
-    font = "Lat2-Terminus16";
-  };
+  console.font = "Lat2-Terminus16";
 
 
   environment.pathsToLink = [ "/libexec" ];
@@ -67,7 +65,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bjarne = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "scanner" "lp" ];
   };
 
   environment.systemPackages = with pkgs; [
