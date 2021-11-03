@@ -8,24 +8,24 @@
 
   ## Network
   networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "wpa_supplicant";
+  # networking.networkmanager.enable = true;
+  # networking.networkmanager.wifi.backend = "wpa_supplicant";
 
 
 
   ## Sound
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-  };
+  # sound.enable = true;
+  # hardware.pulseaudio = {
+  #   enable = true;
+  #   package = pkgs.pulseaudioFull;
+  # };
 
   ## Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    package = pkgs.bluezFull;
-  };
+  # hardware.bluetooth = {
+  #   enable = true;
+  #   powerOnBoot = true;
+  #   package = pkgs.bluezFull;
+  # };
 
   ## Graphics
   # hardware.opengl = {
@@ -58,7 +58,7 @@
   nix.maxJobs = lib.mkDefault 4;
   powerManagement = {
       ## TODO: Change to "powersave" when not connected to power
-    cpuFreqGovernor = lib.mkDefault "performance";
+    cpuFreqGovernor = lib.mkDefault "powersave";
     powertop.enable = true;
   };
 

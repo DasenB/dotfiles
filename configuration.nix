@@ -6,7 +6,7 @@
       ./system/hardware.nix
       ./system/localisation.nix
       ./system/printer.nix
-      ./system/fonts.nix
+     # ./system/fonts.nix
       ./system/packages.nix
     ];
 
@@ -24,6 +24,7 @@
 
 
   environment.pathsToLink = [ "/libexec" ];
+
   services.xserver = {
     enable = true;
 
