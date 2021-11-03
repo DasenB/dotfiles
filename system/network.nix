@@ -5,10 +5,11 @@
 
   imports =
     [
-      ./secrets/wifi.nix
+      ../secrets/wifi.nix
     ];
 
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "wpa_supplicant";
+
 }
