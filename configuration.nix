@@ -3,12 +3,17 @@
 {
   imports =
     [
-      ./system/hardware.nix
-      ./system/localisation.nix
-      ./system/printer.nix
-     # ./system/fonts.nix
-      ./system/packages.nix
+      ./hardware-configuration.nix
+      ./localisation.nix
     ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "nixos-desktop";
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  time.timeZone = "Europe/Amsterdam";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -20,11 +25,14 @@
   
   nixpkgs.config.allowUnfree = true;
   
-  console.font = "Lat2-Terminus16";
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "de";
+  };
 
 
   environment.pathsToLink = [ "/libexec" ];
-
   services.xserver = {
     enable = true;
 
@@ -53,20 +61,38 @@
   };
 
 
-
+  # Printer and Scanner
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.gutenprint pkgs.epson-escpr pkgs.hplipWithPlugin];
+  };
   
+  hardware.sane = {
+    enable = true;
+    extraBackends = [pkgs.sane-airscan ];
+  };
 
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+  };
+  
+  
+  # Configure keymap in X11
+  services.xserver.layout = "de";
+  services.xserver.xkbOptions = "eurosign:e";
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput = {
-  #    enable = true;
-  #    touchpad.middleEmulation = true;
-  #  };
+  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bjarne = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "scanner" "lp" ];
+    extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
   };
 
   environment.systemPackages = with pkgs; [
@@ -109,5 +135,13 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "21.05"; # Did you read the comment?
 
 }
