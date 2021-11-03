@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./localisation.nix
-    ];
+#   imports =
+#     [
+# #      ./hardware-configuration.nix
+# #      ./localisation.nix
+#     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
