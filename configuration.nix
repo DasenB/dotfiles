@@ -1,18 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  # imports =
-  #   [
-  #     ./hardware-configuration.nix
-  #   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos-desktop";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  time.timeZone = "Europe/Amsterdam";
+  imports =
+    [
+      ./system/hardware.nix
+      ./system/localisation.nix
+      ./system/printer.nix
+      ./system/fonts.nix
+      ./system/packages.nix
+    ];
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -24,10 +20,8 @@
   
   nixpkgs.config.allowUnfree = true;
   
-  i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "de";
   };
 
 
@@ -60,30 +54,9 @@
   };
 
 
-  # Printer and Scanner
-  services.printing = {
-    enable = true;
-    drivers = [ pkgs.gutenprint pkgs.epson-escpr pkgs.hplipWithPlugin];
-  };
-  
-  hardware.sane = {
-    enable = true;
-    extraBackends = [pkgs.sane-airscan ];
-  };
 
-  services.avahi = {
-    enable = true;
-    nssmdns = true;
-  };
   
-  
-  # Configure keymap in X11
-  services.xserver.layout = "de";
-  services.xserver.xkbOptions = "eurosign:e";
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
