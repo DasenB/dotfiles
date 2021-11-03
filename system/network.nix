@@ -5,6 +5,7 @@
 
   imports =
     [
+      ../modules/wifi-password.nix
       ../secrets/wifi.nix
     ];
 
