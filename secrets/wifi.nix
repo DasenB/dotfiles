@@ -3,9 +3,7 @@
 {
     networking.wireless.networks.NETWORK = {
       psk = "";
-      autoconnect = {
-        enable = true;
-        priority = 1;
-      };
+      autoconnectEnable = true;
+      autoconnectPriority = 1;
     };
 }
