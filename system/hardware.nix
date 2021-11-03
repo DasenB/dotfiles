@@ -8,8 +8,12 @@
 
   ## Network
   networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = true;
+  networking.networkmanager.enable = true;     # Use networkmanager for internet connections
+  networking.networkmanager.unmanaged = [
+   "*" "except:type:wwan" "except:type:gsm"
+  ];
+  networking.wireless.enable = true;           # use wpa_supplicant for wireless
+
 
   ## Sound
   sound.enable = true;
