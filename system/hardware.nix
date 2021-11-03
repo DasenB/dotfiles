@@ -8,8 +8,8 @@
 
   ## Network
   networking.hostName = "laptop";
-  # networking.networkmanager.enable = true;
-  # networking.networkmanager.wifi.backend = "wpa_supplicant";
+  networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "wpa_supplicant";
 
 
 
