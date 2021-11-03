@@ -3,8 +3,8 @@
 {
   imports =
     [
-#      ./hardware-configuration.nix
      ./system/localisation.nix
+     ./system/fonts.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
