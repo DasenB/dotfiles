@@ -5,6 +5,7 @@
     [
      ./system/localisation.nix
      ./system/fonts.nix
+     ./system/packages.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
