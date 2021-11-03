@@ -6,6 +6,7 @@
      ./system/localisation.nix
      ./system/fonts.nix
      ./system/packages.nix
+     ./system/printer.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

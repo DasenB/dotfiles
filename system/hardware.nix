@@ -55,12 +55,12 @@
   # };
 
   ## CPU
-  nix.maxJobs = lib.mkDefault 4;
-  powerManagement = {
-      ## TODO: Change to "powersave" when not connected to power
-    cpuFreqGovernor = lib.mkDefault "powersave";
-    powertop.enable = true;
-  };
+  # nix.maxJobs = lib.mkDefault 4;
+  # powerManagement = {
+  #     ## TODO: Change to "powersave" when not connected to power
+  #   cpuFreqGovernor = lib.mkDefault "powersave";
+  #   powertop.enable = true;
+  # };
 
 
 }
