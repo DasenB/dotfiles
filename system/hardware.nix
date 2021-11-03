@@ -28,31 +28,31 @@
   };
 
   ## Graphics
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD to use this
-      intel-ocl
-    ];
-  };
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
+  # hardware.opengl = {
+  #   enable = true;
+  #   driSupport = true;
+  #   driSupport32Bit = true;
+  #   extraPackages = with pkgs; [
+  #     vaapiIntel
+  #     vaapiVdpau
+  #     libvdpau-va-gl
+  #     intel-media-driver # LIBVA_DRIVER_NAME=iHD to use this
+  #     intel-ocl
+  #   ];
+  # };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  # };
 
-  ## Video Driver for GUI
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "intel" ];
-    deviceSection = ''
-      Option "DRI" "2"
-      Option "TearFree" "true"
-      '';
-  };
+  # ## Video Driver for GUI
+  # services.xserver = {
+  #   enable = true;
+  #   videoDrivers = [ "intel" ];
+  #   deviceSection = ''
+  #     Option "DRI" "2"
+  #     Option "TearFree" "true"
+  #     '';
+  # };
 
   ## CPU
   nix.maxJobs = lib.mkDefault 4;
