@@ -3,16 +3,17 @@
 {
   imports =
     [
+     ./system/hardware.nix
      ./system/localisation.nix
      ./system/fonts.nix
      ./system/packages.nix
      ./system/printer.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-desktop";
+  # networking.hostName = "nixos-desktop";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -58,21 +59,21 @@
   };
 
 
-  # Printer and Scanner
-  services.printing = {
-    enable = true;
-    drivers = [ pkgs.gutenprint pkgs.epson-escpr pkgs.hplipWithPlugin];
-  };
+  # # Printer and Scanner
+  # services.printing = {
+  #   enable = true;
+  #   drivers = [ pkgs.gutenprint pkgs.epson-escpr pkgs.hplipWithPlugin];
+  # };
   
-  hardware.sane = {
-    enable = true;
-    extraBackends = [pkgs.sane-airscan ];
-  };
+  # hardware.sane = {
+  #   enable = true;
+  #   extraBackends = [pkgs.sane-airscan ];
+  # };
 
-  services.avahi = {
-    enable = true;
-    nssmdns = true;
-  };
+  # services.avahi = {
+  #   enable = true;
+  #   nssmdns = true;
+  # };
   
   
   # Configure keymap in X11
@@ -80,8 +81,8 @@
   # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

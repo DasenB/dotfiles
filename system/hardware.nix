@@ -2,7 +2,7 @@
 
 {
   ## Kernel
-  hardware.enableAllFirmware = true;
+  #hardware.enableAllFirmware = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -14,11 +14,11 @@
 
 
   ## Sound
-  # sound.enable = true;
-  # hardware.pulseaudio = {
-  #   enable = true;
-  #   package = pkgs.pulseaudioFull;
-  # };
+  sound.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudioFull;
+  };
 
   ## Bluetooth
   # hardware.bluetooth = {
