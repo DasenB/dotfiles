@@ -17,6 +17,8 @@ let
         [connection]
         id=${ssid}
         type=wifi
+        autoconnect=${opt.autoconnect.enable}
+        autoconnect-priority=${opt.autoconnect.priority}
 
         [wifi]
         ssid=${ssid}
