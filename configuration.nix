@@ -3,8 +3,8 @@
 {
   imports =
     [
-     ./secrets/wifi.nix
      ./system/hardware.nix
+     ./system/network.nix
      ./system/localisation.nix
      ./system/fonts.nix
      ./system/packages.nix

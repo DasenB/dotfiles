@@ -6,13 +6,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  ## Network
-  networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "wpa_supplicant";
-
-
-
   ## Sound
   sound.enable = true;
   hardware.pulseaudio = {
