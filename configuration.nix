@@ -13,8 +13,6 @@
   networking.hostName = "nixos-desktop";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  time.timeZone = "Europe/Amsterdam";
-
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
@@ -26,10 +24,7 @@
   nixpkgs.config.allowUnfree = true;
   
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "de";
-  };
+  console.font = "Lat2-Terminus16";
 
 
   environment.pathsToLink = [ "/libexec" ];
@@ -79,8 +74,8 @@
   
   
   # Configure keymap in X11
-  services.xserver.layout = "de";
-  services.xserver.xkbOptions = "eurosign:e";
+  # services.xserver.layout = "de";
+  # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable sound.
   sound.enable = true;
