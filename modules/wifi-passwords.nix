@@ -83,7 +83,7 @@ in {
         ExecReload = "${pkgs.networkmanager}/bin/nmcli connection reload";
       };
       reloadIfChanged = true;
-      wantedBy = [ "multi-user.target" ];
+      # wantedBy = [ "multi-user.target" ];
     };
   };
 }
