@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-    networking.wireless.networks.NETWORK = {
+    networking.networkmanager.networks.NETWORK = {
       psk = "";
-      # autoconnectEnable = true;
-      # autoconnectPriority = 1;
+      autoconnect = true;
+      priority = 1;
     };
 }
