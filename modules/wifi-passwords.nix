@@ -18,7 +18,7 @@ let
         id=${ssid}
         type=wifi
         autoconnect=${if opt.autoconnect then "TRUE" else "FALSE" }
-        autoconnect-priority=${opt.priority}
+        autoconnect-priority=${toString opt.priority}
 
         [wifi]
         ssid=${ssid}
