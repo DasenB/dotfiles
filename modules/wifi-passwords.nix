@@ -17,6 +17,8 @@ let
         [connection]
         id=${ssid}
         type=wifi
+        autoconnect=${if opt.autoconnect then "TRUE" else "FALSE" }
+        autoconnect-priority=${opt.priority}
 
         [wifi]
         ssid=${ssid}
